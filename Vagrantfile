@@ -75,7 +75,7 @@ Vagrant.configure("2") do |config|
      
     cp.winrm.timeout = 1800 # 30 minutes
     cp.vm.boot_timeout = 1800 # 30 minutes
-    cp.vm.synced_folder "C:\\Users\\apatel", "/mnt/", type: "virtualbox"
+    cp.vm.synced_folder "C:\\Users\\xxxx", "/mnt/", type: "virtualbox"
     cp.vm.network "private_network", ip: IP_NW + "#{IP_START}"
       #virtualbox__intnet: true
 
@@ -102,7 +102,7 @@ Vagrant.configure("2") do |config|
   (1..NUM_WORKER_NODES).each do |i|
 
     config.vm.define "node0#{i}" do |node|
-      node.vm.synced_folder "C:\\Users\\apatel", "/mnt/", type: "virtualbox"
+      node.vm.synced_folder "C:\\Users\\xxxx", "/mnt/", type: "virtualbox"
       node.vm.hostname = "worker-node0#{i}"
       node.vm.network "private_network", ip: IP_NW + "#{IP_START + i}"
         #virtualbox__intnet: true
